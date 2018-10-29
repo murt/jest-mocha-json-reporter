@@ -1,0 +1,34 @@
+{
+    "name": "jest-mocha-json-reporter",
+    "version": "0.0.1",
+    "author": "murt <murt@unpossible.io>",
+    "description": "Jest reporter that formats test output like mocha's json reporter",
+    "keywords": [
+        "jest",
+        "mocha",
+        "reporter",
+        "json",
+        "bamboo",
+        "atlassian"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/murt/jest-mocha-json-reporter",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/murt/jest-mocha-json-reporter"
+    },
+    "bugs": {
+        "url": "https://github.com/murt/jest-mocha-json-reporter/issues"
+    },
+    "main": "index.js",
+    "engineStrict": true,
+    "engines": {
+        "node": ">=6.0.0"
+    },
+    "dependencies": {
+        "mkdirp": "0.5.1"
+    },
+    "devDependencies": {
+        "jest": "23.6.0"
+    }
+}
