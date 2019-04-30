@@ -1,0 +1,34 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+
+defaults: &defaults
+  working_directory: ~/jest-mocha-json-reporter
+  docker:
+    - image: circleci/node:10.13.0
+
+jobs:
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/jest-mocha-json-reporter
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/jest-mocha-json-reporter/.npmrc
+      - run:
+          name: Publish package
+          command: npm publish
+            
+workflows:
+  version: 2
+    jobs:
+      - deploy:
+          context: npm
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
