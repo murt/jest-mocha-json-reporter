@@ -20,7 +20,7 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/jest-mocha-json-reporter/.npmrc
       - run:
           name: Publish package
-          command: npm publish
+          command: npm publish -v
             
 workflows:
   version: 2
