@@ -27,7 +27,7 @@ workflows:
   deploy:
     jobs:
       - deploy:
-          context: npm
+          context: NPM
           filters:
             tags:
               only: /^v.*/
