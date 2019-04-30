@@ -24,11 +24,11 @@ jobs:
             
 workflows:
   version: 2
-    jobs:
-      - deploy:
-          context: npm
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
+  jobs:
+    - deploy:
+        context: npm
+        filters:
+          tags:
+            only: /^v.*/
+          branches:
+            ignore: /.*/
