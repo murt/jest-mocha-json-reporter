@@ -19,6 +19,9 @@ jobs:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/jest-mocha-json-reporter/.npmrc
       - run:
+          name: Check for package.json
+          command: ls -l
+      - run:
           name: Publish package
           command: npm publish --verbose
             
