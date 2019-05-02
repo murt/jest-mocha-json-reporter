@@ -90,8 +90,8 @@ class JestMochaJsonReporter {
             // perfStats appears to be an older property, duration is the currently working one
             // It is possible for duration to be 0 and so a simple boolean check won't work
             duration: result.hasOwnProperty("duration") ? result.duration : result.perfStats.end - result.perfStats.start,
-            errorCount: result.failureMessages.length,
-            error: result.failureMessages.length ? this.formatFailureMessages(result.failureMessages) : undefined,
+            errorCount: result.failureMessages.filter(Boolean).length,
+            error: result.failureMessages.filter(Boolean).length ? this.formatFailureMessages(result.failureMessages.filter(Boolean)) : undefined,
         };
     }
 
